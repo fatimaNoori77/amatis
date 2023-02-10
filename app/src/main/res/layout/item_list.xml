@@ -14,12 +14,14 @@
         android:background="@drawable/background1"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imgRank"
+        <TextView
+            android:id="@+id/txtRank"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside" />
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp"
+            android:background="@drawable/circle"/>
 
         <TextView
             android:id="@+id/txtPrice"

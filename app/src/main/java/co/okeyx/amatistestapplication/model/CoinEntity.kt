@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class CoinEntity(
     @PrimaryKey var id : String, // bitcoin
     val currentPrice : Float,
-    val marketCapRank : Int
+    val marketCapRank : Int,
+    val imageUrl : String,
     )

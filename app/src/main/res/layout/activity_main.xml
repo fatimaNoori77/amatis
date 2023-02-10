@@ -21,6 +21,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <ProgressBar
+        android:visibility="gone"
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

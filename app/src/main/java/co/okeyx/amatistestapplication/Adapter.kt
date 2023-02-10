@@ -1,5 +1,6 @@
 package co.okeyx.amatistestapplication
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -26,27 +27,16 @@ class Adapter : RecyclerView.Adapter<Adapter.MainViewHolder>() {
             false
         )
         TypefaceUtil.overrideFonts(binding.root)
+        TypefaceUtil.overrideFonts(binding.txtRank, MyApplication.iranSansMediumTF)
         return MainViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val model = coinModels[position]
 
-        holder.binding.txtPrice.text =
-            "${StringHelper.toPersianDigits((model.currentPrice.toString()))} تومان "
-        var image = R.mipmap.golden
-        when (model.marketCapRank) {
-            1 -> {
-                image = R.mipmap.golden
-            }
-            2 -> {
-                image = R.mipmap.silver
-            }
-            3 -> {
-                image = R.mipmap.bronze
-            }
-        }
-        holder.binding.imgRank.setImageResource(image)
+        holder.binding.txtPrice.text = "${StringHelper.toPersianDigits((model.currentPrice.toString()))} تومان "
+        holder.binding.txtRank.text = StringHelper.toPersianDigits(model.marketCapRank.toString())
         Picasso.get().load(model.imageUrl).error(R.drawable.ic_round_downloading_24).into(holder.binding.imgCoin)
 
     }

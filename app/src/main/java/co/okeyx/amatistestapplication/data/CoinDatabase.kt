@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import co.okeyx.amatistestapplication.model.CoinEntity
 
-@Database(entities = [CoinEntity::class], version = 1,  exportSchema = false)
+@Database(entities = [CoinEntity::class], version = 2,  exportSchema = false)
 abstract class CoinDatabase : RoomDatabase() {
     abstract fun coinDao(): CoinDao
 

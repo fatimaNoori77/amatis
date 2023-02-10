@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = MainViewModel(MyApplication.getRetrofitService(), pageNo)
 
         if (NetworkUtil.getConnectivityStatus(applicationContext) == TYPE_NOT_CONNECTED) {
+            binding.vfList.displayedChild = 1
             adapter.setList(fetchDataFromDB())
             return
         }

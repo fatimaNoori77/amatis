@@ -45,10 +45,12 @@ class MainActivity : AppCompatActivity() {
             return
         }
         viewModel.coinList.observe(this) {
+            binding.vfList.displayedChild = 1
             list.addAll(it)
             adapter.setList(list)
         }
         viewModel.errorMessage.observe(this) {
+            binding.vfList.displayedChild = 2
             Log.e("TAG", "onCreate: $it")
             if (NetworkUtil.getConnectivityStatus(applicationContext) == TYPE_NOT_CONNECTED) {
                 adapter.setList(fetchDataFromDB())
